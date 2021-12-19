@@ -1,11 +1,11 @@
 import Header from "./Header";
 import Footer from "./Footer";
 
-export default function Leyout({ Children }) {
+export default function Leyout({ children }) {
   return (
     <div>
       <Header />
-      <div>{Children}</div>
+      <div>{children}</div>
       <Footer />
     </div>
   );
