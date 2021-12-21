@@ -1,25 +1,33 @@
-import {Container,Row,Col,Card} from "react-bootstrap";
-
+import { Container, Row, Col, Card } from "react-bootstrap";
+import styles from "../../styles/branches.module.css";
 export default function Branches() {
   return (
     <div>
-
-      <Container>
+      <Container className={styles.container}>
         <Row>
-          <Col> Our Location </Col>
+          <h1> Our Locations</h1>
+        </Row>
+        <Row>
           <Col>
-            <Card style={{ width: "18rem" }}>
+            <Card className={styles.card} style={{ width: "18rem" }}>
               <Card.Body>
-                <Card.Title>Riyadh-Al-Sahafa neighborhood</Card.Title>
+                <Card.Title>Riyadh-Al-Sahafa </Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">
-                  Card Subtitle
+                  neighborhood
                 </Card.Subtitle>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-                <Card.Link href="#">Card Link</Card.Link>
-                <Card.Link href="#">Another Link</Card.Link>
+                <Card.Text>Tel:+96658745914587 Tel2:+9661236985744</Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+      
+          <Col>
+            <Card className={styles.card} style={{ width: "18rem" }}>
+              <Card.Body>
+                <Card.Title>Najran-Prince Mishaal </Card.Title>
+                <Card.Subtitle className="mb-2 text-muted">
+                  neighborhood
+                </Card.Subtitle>
+                <Card.Text>Tel:+966059321478 Tel2:+966123654789</Card.Text>
               </Card.Body>
             </Card>
           </Col>
