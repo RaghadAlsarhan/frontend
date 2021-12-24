@@ -34,7 +34,7 @@ export default function Service() {
               <li>$100</li>
               <li>$74</li>
               <li>$507</li>
-              <li>$65</li>
+              <li>$600</li>
               <li>$124</li>
               <li>$400</li>
             </ul>
