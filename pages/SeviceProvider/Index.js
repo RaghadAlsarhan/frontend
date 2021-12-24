@@ -1,18 +1,18 @@
 import React from "react";
-import { Card } from "react-bootstrap";
+import { Card ,Container, Row, Col} from "react-bootstrap";
 import Image from "next/image";
-export default function SeviceProvider() {
+export default function SeviceProvider({data}) {
   return (
     <div>
         <Container>
         <Row>
-          <Col className={styles.card.prod}>
+          <Col>
             {data.map((elemm, i) => (
               <div key={i}>
                 <Card style={{ width: "18rem" }}>
                   <Image
                     src={`${elemm.imge}`}
-                    alt="Products images"
+                    alt="SeviceProvider images"
                     width={400}
                     height={300}
                   />
@@ -32,7 +32,7 @@ export default function SeviceProvider() {
   );
 }
 export async function getServerSideProps(context) {
-  const res = await fetch("http://localhost:3000/provider");
+  const res = await fetch("http://localhost:3001/provider");
   const data = await res.json();
 
   return {

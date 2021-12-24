@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { Container, Row, Col, Card } from "react-bootstrap";
 import styles from "../../styles/service.module.css";
 import Image from "next/image";
 export default function Service() {
@@ -40,9 +40,7 @@ export default function Service() {
             </ul>
           </Col>
           <Col>
-            {/* <Card  className={styles.card}>
-              <Card.Body  className={styles.cardbody}>HAIR</Card.Body>
-            </Card> */}
+      
             <Card className={styles.card}>HAIR</Card>
           </Col>
         </Row>
@@ -102,4 +100,4 @@ export default function Service() {
     </div>
   );
 }
-// justify-content
+
