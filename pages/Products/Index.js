@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import Image from "next/image";
@@ -48,3 +49,4 @@ export async function getServerSideProps(context) {
     },
   };
 }
+

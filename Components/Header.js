@@ -6,32 +6,41 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-    <div>
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Container>
-          <Navbar.Brand href="#home">
-            {" "}
-            <Image src={"/Img/logo.jpg"} width={110} height={100} />
-          </Navbar.Brand>{" "}
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="me-auto"></Nav>
-            <Nav>
-            <Nav.Link href="/Home">Home</Nav.Link>
-              <Nav.Link eventKey={2} href="/Products">
-                Products
-              </Nav.Link>
-              <Nav.Link eventKey={2} href="/Register">
-                Register
-              </Nav.Link>
-              <Nav.Link eventKey={2} href="/Appointment">
-                Appointment
-              </Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-      <Image src={"/Img/logo.jpg"} width={400} height={500} />
-    </div>
+    <Nav defaultActiveKey="/" as="ul" className="nav">
+    <Nav.Item as="li">
+      {/* <Image src={Devjob} alt="logo"></Image> */}
+    </Nav.Item>
+    <Nav.Item as="li" style={{ marginTop: "60px", marginLeft: "10px" }}>
+      <Nav.Link href="/" style={{ color: "#EBE5C1", fontSize: "16px" }}>
+        <b>Home</b>
+      </Nav.Link>
+    </Nav.Item>
+    <Nav.Item as="li" style={{ marginTop: "60px" }}>
+      <Nav.Link href="/Products" style={{ color: "#EBE5C1", fontSize: "16px" }}>
+        <b>Products</b>
+      </Nav.Link>
+    </Nav.Item>
+    <Nav.Item as="li" style={{ marginTop: "60px" }}>
+      <Nav.Link href="/SeviceProvider" style={{ color: "#EBE5C1", fontSize: "16px" }}>
+        <b>Providers</b>
+      </Nav.Link>
+    </Nav.Item>
+    <Nav.Item as="li" style={{ marginTop: "60px" }}>
+      <Nav.Link
+        href="/user/signin"
+        style={{ color: "#EBE5C1", fontSize: "16px" }}
+      >
+        <b>Signin</b>
+      </Nav.Link>
+    </Nav.Item>
+    <Nav.Item as="li" style={{ marginTop: "60px" }}>
+      <Nav.Link
+        href="/user/register"
+        style={{ color: "#EBE5C1", fontSize: "16px" }}
+      >
+        <b>Signup</b>
+      </Nav.Link>
+    </Nav.Item>
+  </Nav>
   );
 }

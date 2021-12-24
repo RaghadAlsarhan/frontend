@@ -1,6 +1,4 @@
-.img{
-  background-image:url("https://www.al3nan.com/wp-content/uploads/2017/08/102727.jpg");
-}
+
 /* .backgroundImage{
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.73)),url("../public/images/PNG/Drawkit-Vector-Illustration-Medical-19.png") ;
   background-size: 100%;
@@ -11,4 +9,21 @@
     width: 100%;
     flex-direction: column;
   }
+}
+
+.h2{
+  font-size:60px;
+  text-align: center;
+}
+
+.img{
+  height: 30px;
+  width: 30px;
+}
+
+.secDiv{
+  padding-left: 4rem;
+  padding-right: 4rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
