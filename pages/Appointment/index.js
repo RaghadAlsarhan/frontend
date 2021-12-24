@@ -1,58 +1,66 @@
 import axios from "axios";
 import React from "react";
-import { Form, Button } from "react-bootstrap";
+import Image from 'next/image'
+import style from '../../styles/Appointment.module.css'
+import { Form, Button, Container, Row, Col  } from "react-bootstrap";
 import { useState, useEffect } from "react";
 export default function Appointment() {
   const [service, setService] = useState([]);
-   const [onChaneService,setOnChaneService] = useState('')
-   const [name, setName]=useState('');
-   const [price , setPrice]=useState();
+  const [onChaneService, setOnChaneService] = useState("");
+  const [name, setName] = useState("");
+  const [price, setPrice] = useState();
 
   useEffect(() => {
-  
     axios
-      .get("http://localhost:4000/services/")
+      .get("http://localhost:3001/services/")
       .then((res) => {
         console.log(res.data);
         setService(res.data);
-        // setOnChaneService(res.data.name)
       })
       .catch((err) => {
         console.log(err);
       });
   }, []);
-//***save the Appointmint in admin page ***//
-function saveAppointment(e){
-  e.preventDefault()
-  axios.post('http://localhost:4000/appointment/save',{name,price})
-  .then((res)=>{
-   
 
-        console.log(res)
-  }).catch((err)=>{
-    console.log(err);
-  })
-}
+  //-------------------------------------------//
+  //***save the Appointmint in admin page ***//
+  //--------------------------------------//
+  function saveAppointment(e) {
+    e.preventDefault();
+    axios
+      .post("http://localhost:3001/appointment/save", { name, price })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+  /////////////////////////////////////////////////////////////////////////////
   return (
     <div>
-      <h1>Appointment</h1>
+      
+      <Container className={style.container}>
+        <Row>
+        <Image src={"/Img/body.jpg"} width={1800} height={800} />
+        </Row>
+        <Row  >
+
+          <Col></Col>
+          <Col  xs={6}>
+          <h1>Appointment</h1>
+          <div  className={style.divAll}>
       <div>
         <h2>Choose an service:</h2>
-        {/* <p> {data[1].name} </p> */}
         <div>
-          <Form
-          //  onSubmit={(e) => {
-          //             handleSubmit(e);
-          //           }}
-          >
+          <Form className={style.form}>
             <select
               onChange={(e) => {
                 setOnChaneService(JSON.parse(e.target.value));
-                setName(JSON.parse(e.target.value).name)
-                setPrice(JSON.parse(e.target.value).price)
+                setName(JSON.parse(e.target.value).name);
+                setPrice(JSON.parse(e.target.value).price);
               }}
             >
-              
               {service.map((services, i) => (
                 <option key={i} value={JSON.stringify(services)}>
                   {services.name}
@@ -60,12 +68,16 @@ function saveAppointment(e){
               ))}
             </select>
             {onChaneService && (
-              <div>
-                <h4>Name of Servies: {onChaneService.name} </h4>
-                <h4 > price of Servies : ${onChaneService.price} </h4>
+              <div className={style.div1}>
+                <ul>
+                  <li>  Name of Servies: {onChaneService.name}</li>
+                  <li> price of Servies : ${onChaneService.price} </li>
+                </ul>
+        
               </div>
             )}
-            Time :{" "}
+            <br/>
+          <h4>  Time of Servies :</h4>
             <div>
               {["radio"].map((type) => (
                 <div key={`inline-${type}`} className="mb-3">
@@ -93,32 +105,26 @@ function saveAppointment(e){
                 </div>
               ))}
             </div>
-            <Button type="click" onClick={(e)=>{
-              saveAppointment(e)
-            }}>Submit</Button>
+            <Button
+              type="click"
+              onClick={(e) => {
+                saveAppointment(e);
+                
+              }}
+            >
+              confirm appointment
+            </Button>
           </Form>
         </div>
       </div>
+      </div>
+          </Col>
+          <Col></Col>
+
+        </Row>
+      </Container>
+      
     </div>
   );
 }
-// export async function getStaticProps(context) {
 
-//     const res = await fetch("http://localhost:4000/services/oneService");
-//     const datab = await res.json();
-//     return{
-//         props:{
-//             datab
-//         }
-//     }
-// }
-{
-  /* <FloatingLabel controlId="floatingSelect" label="Works with selects">
-  <Form.Select aria-label="Floating label select example">
-    <option>Open this select menu</option>
-    <option value="1">One</option>
-    <option value="2">Two</option>
-    <option value="3">Three</option>
-  </Form.Select>
-</FloatingLabel> */
-}

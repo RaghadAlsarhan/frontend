@@ -1,0 +1,39 @@
+.container{
+    margin-top: 20px;
+}
+.container h1{
+    text-align: center;
+margin: 25px;
+}
+.form{
+    font-size: large;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+.form button{
+    text-align: center;
+    background-color: black;
+    border: rgb(70, 69, 69);
+    font-weight: bold;
+
+}
+.form button:hover{
+    background-color: white;
+    color: black;
+    border: black;
+    font-weight: bold;
+}
+.div1{
+    margin-bottom: 50px;
+}
+.form select{
+    margin-bottom: 25px;
+}
+.form div{
+    margin-bottom: 40px;
+}
+.divAll{
+    border: rgb(19, 15, 15) 2px solid;
+    padding: 50px;
+    border-radius: 10px;
+}
