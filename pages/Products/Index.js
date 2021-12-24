@@ -3,6 +3,7 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 import Image from "next/image";
 import styles from "../../styles/Products.module.css"
 export default function Products({ data }) {
+  console.log(data);
   return (
     <div>
       <Container>
