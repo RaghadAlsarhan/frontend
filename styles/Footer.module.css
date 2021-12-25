@@ -13,12 +13,12 @@
 
   .footer{
     background-color:#2F2F2F ;
-    position:static;
-    bottom: 0px;
+    position:relative;
+    bottom: -20px;
     display: block;
     text-align: center;
   }
   #p{
     font-size: 9px;
-    color: white;
+    color:whitesmoke;
   }
