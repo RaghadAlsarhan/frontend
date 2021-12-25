@@ -1,9 +1,3 @@
-
-/* .backgroundImage{
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.73)),url("../public/images/PNG/Drawkit-Vector-Illustration-Medical-19.png") ;
-  background-size: 100%;
-  height: 94vh;
-} */
 @media (max-width: 600px) {
   .grid {
     width: 100%;
@@ -15,15 +9,50 @@
   font-size:60px;
   text-align: center;
 }
-
+.firstDiv{
+  height: 24rem;
+}
 .img{
-  height: 30px;
-  width: 30px;
+  opacity: .8;
+  height: 2rem;
+}
+.cardBody{
+  height: 5px;
+  opacity: .5;
 }
 
 .secDiv{
   padding-left: 4rem;
   padding-right: 4rem;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  height: 20rem;
+  background-color: whitesmoke;
 }
+
+/* .card{
+  margin-left: 5px;
+  margin-right: 5px;
+} */
+
+.title{
+  text-align: center;
+  padding-top: 18rem;
+  font-size: medium;
+  color: aliceblue;
+}
+.title :hover{
+  cursor: pointer;
+}
+
+.cardTitle{
+  font-size: 70px;
+  /* padding-top: 18rem; */
+  /* position: relative;
+  top: 18rem; */
+}
+
+.thirdDiv{
+  margin-bottom: 2rem;
+}
+
