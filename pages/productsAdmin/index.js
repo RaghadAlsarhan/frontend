@@ -1,40 +1,76 @@
 import React from "react";
-import { useState } from "react";
-import { Container, Row, Col, Table, Button } from "react-bootstrap";
-import Image from "next/image";
-export default function productsAdmin({ data }) {
+import { useState, useEffect } from "react";
+import style from "../../styles/Appointment.module.css";
+import axios from "axios";
+import {
+  Container,
+  Row,
+  Col,
+  Table,
+  Button,
+  InputGroup,
+  FormControl,
+} from "react-bootstrap";
+export default function productsAdmin() {
   const [name, setName] = useState();
-  const [price, setPrice] = useState();
-  function Update() {
+  const [desc, setDesc] = useState();
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    GetAllProdect();
+  }, []);
+//-------------------------------------------//
+//*************Get all Prouducts************//
+//-------------------------------------------//
+
+  function GetAllProdect() {
     axios
-      .put(`http://localhost:3001/services/update/${id}`)
-      .than((res) => {
+      .get(`http://localhost:3001/products/`)
+      .then((res) => {
         console.log(res.data);
+        setData(res.data);
       })
       .catch((err) => {
         console.log(err);
       });
   }
-  function Delete() {
+//-------------------------------------------//
+  /************ delete Product *************/
+//-----------------------------------------//
+  function Delete(_id) {
     axios
-      .put(`http://localhost:3001/services/delete/${id}`)
-      .than((res) => {
+      .delete(`http://localhost:3001/products/delete/${_id}`)
+      .then((res) => {
         console.log(res.data);
+        GetAllProdect();
       })
       .catch((err) => {
         console.log(err);
       });
   }
-  function Save() {
+  
+
+//-------------------------------------------//
+  /************ Save Product *************/
+//-------------------------------------------//
+
+
+  function Save(e) {
+    e.preventDefault();
     axios
-      .put(`http://localhost:3001/services/save`)
-      .than((res) => {
+      .post(`http://localhost:3001/products/save`, { name, desc })
+      .then((res) => {
         console.log(res.data);
+        GetAllProdect();
       })
       .catch((err) => {
         console.log(err);
       });
   }
+//-------------------------------------------//
+//-------------------------------------------//
+//-------------------------------------------//
+
   return (
     <div>
       <Container>
@@ -46,56 +82,65 @@ export default function productsAdmin({ data }) {
             <Table striped bordered hover>
               <thead>
                 <tr>
-                  <th>Image:</th>
-
                   <th>Name of Product:</th>
                   <th>Description of Product:</th>
                   <th>Delete</th>
-                  <th>Update</th>
                 </tr>
               </thead>
               {data.map((ele, i) => (
                 <tbody key={i}>
                   <tr>
-                    <td>
-                      <Image
-                        src={ele.img}
-                        alt="Prodect imge"
-                        width={150}
-                        height={100}
-                      />{" "}
-                    </td>
                     <td> {ele.name} </td>
                     <td>{ele.desc} </td>
                     <td>
-                      <Button> Delete Product</Button>
-                    </td>
-                    <td>
-                      <Button> update Product</Button>
+                      <Button className={style.button}
+                        onClick={() => {
+                          Delete(ele._id);
+                        }}
+                      >
+                        {" "}
+                        Delete Product
+                      </Button>
                     </td>
                   </tr>
                 </tbody>
               ))}
             </Table>
-            <Table>
-              <tbody>
-                <tr>
-                  <td>add New prodect</td>
-                </tr>
-              </tbody>
-            </Table>
+
+            <Col>
+              <h1>add New prodect</h1>
+            </Col>
+            <InputGroup className="mb-3">
+              <FormControl
+                onChange={(event) => {
+                  setName(event.target.value);
+                }}
+                placeholder="Product Name"
+                aria-label="Recipient's username"
+                aria-describedby="basic-addon2"
+              />
+              <FormControl
+                onChange={(event) => {
+                  setDesc(event.target.value);
+                }}
+                placeholder="Product Description"
+                aria-label="Recipient's username"
+                aria-describedby="basic-addon2"
+              />
+
+              <Button 
+                onClick={(e) => {
+                  Save(e);
+                }}
+                variant="outline-secondary"
+                id="button-addon2"
+              >
+                Add
+              </Button>
+            </InputGroup>
           </Col>
         </Row>
       </Container>
     </div>
   );
-}
-export async function getServerSideProps(context) {
-  const res = await fetch("http://localhost:3001/products/");
-  const data = await res.json();
-  return {
-    props: {
-      data,
-    },
-  };
 }

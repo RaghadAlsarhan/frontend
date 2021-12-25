@@ -36,7 +36,7 @@ export default function Login() {
   function validate(e) {
     if (email === "" && password === "") {
       setErrorMessage("Please enter your information");
-    } else {
+    } else { 
       handleSubmit(e);
     }
   }
