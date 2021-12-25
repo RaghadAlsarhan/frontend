@@ -1,13 +1,23 @@
 import { Container, Row, Col, Card } from "react-bootstrap";
 import styles from "../../styles/branches.module.css";
+import Image from 'next/image'
 export default function Branches() {
   return (
     <div>
       <Container className={styles.container}>
         <Row>
-          <h1> Our Locations</h1>
+        <Image
+            src="/Img/branches.jpg"
+            alt="Vercel Logo"
+            width={1400}
+            height={600}
+          />
+        </Row>
+        <Row className={styles.container}>
+          <h1>  OUR LOCATIONS</h1>
         </Row>
         <Row>
+          <Col></Col>
           <Col>
             <Card className={styles.card} style={{ width: "18rem" }}>
               <Card.Body>
@@ -31,6 +41,8 @@ export default function Branches() {
               </Card.Body>
             </Card>
           </Col>
+          <Col></Col>
+
         </Row>
       </Container>
     </div>

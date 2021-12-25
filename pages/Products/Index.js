@@ -11,7 +11,7 @@ export default function Products({ data }) {
         <Image src={"/Img/service.png"} width={1800} height={800} />
         </Row>
         <Row>
-          <h1> Our Products</h1>
+          <h1>  OUR PRODUCTS</h1>
         </Row>
         <Row>
           <Col className={styles.col} >
