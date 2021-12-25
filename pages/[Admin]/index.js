@@ -18,7 +18,7 @@ export default function Admin({ data }) {
                 <tbody key={i}>
                   <tr>
                     <td> {element.name} </td>
-                    <td> {element.price} </td>
+                    <td> ${element.price} </td>
                   </tr>
                 </tbody>
               ))}

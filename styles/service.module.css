@@ -4,7 +4,7 @@ border-bottom-width: thick;
 }
 .row{
     margin-top: 50px;
-    border-bottom-width: 500px;
+    border-bottom:solid black 4px;
 }
 .row h1{
     text-align: center;
