@@ -32,16 +32,13 @@ const router = useRouter();
       </div>
       <div className={styles.secDiv}>
         <h2 className={styles.h2}>About us</h2>
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged.
+        <p className={styles.p}>
+        In Beauty Center Salon, you can find our services along with prices, and you can easily book an appointment for any service you need, you can find
+        we have many services for all members of the Society, such as hairdressing, make-up, pedicure, and manicure services, in addition to full skin care services,also you can find our used products to ensure quality and reliability.
         </p>
       </div>
-      <div className={styles.thirdDiv}> 
+      <div className={styles.thirdDiv}>
+        <h2 className={styles.h4}>Our Services</h2> 
         <CardGroup>
           <Card className={styles.card}>
             <Image

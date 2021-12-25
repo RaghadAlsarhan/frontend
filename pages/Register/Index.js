@@ -5,15 +5,14 @@ import { Container, Row, Col, Nav, Card } from "react-bootstrap";
 import { useState } from "react";
 import Link from "next/link";
 import axios from "axios";
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
+import styles from "../../styles/Signup.module.css";
 
-
-export default function Register() {  
+export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const router = useRouter();
-
 
   //const navigate = useNavigate();
 
@@ -26,7 +25,7 @@ export default function Register() {
         console.log(res.data);
         if (!(email == "" && password == "")) {
           // navigate("/LogIn");
-          router.push('/LogIn')
+          router.push("/LogIn");
         }
       })
       .catch((err) => {
@@ -44,6 +43,7 @@ export default function Register() {
 
   return (
     <div>
+      <h2 className={styles.h2}>Sign up</h2>
       <Container
         style={{
           borderStyle: "solid",
@@ -51,10 +51,10 @@ export default function Register() {
           borderColor: "#dee2e6",
           borderWidth: "1px",
           boxShadow: "5px 7px #adb5bd",
-          height:"350px",
-          width:"500px",
-          marginTop:"3rem",
-          marginBottom:"3rem"
+          height: "280px",
+          width: "400px",
+          marginTop: "1rem",
+          marginBottom: "3rem",
         }}
       >
         <Form
@@ -64,11 +64,12 @@ export default function Register() {
           //   margin: "20px 60px 70px 60px",
           // }}
         >
-          <Form.Group className="mb-3" controlId="formBasicEmail">
+          {/* <Form.Group className="mb-3" controlId="formBasicEmail"> */}
             <Form.Label style={{ color: "red" }}>{errorMessage}</Form.Label>
             <br />
-            <Form.Label>Email address</Form.Label>
+            <Form.Label className={styles.label}>Email address</Form.Label>
             <Form.Control
+              className={styles.control}
               type="email"
               id="email"
               placeholder="Enter email"
@@ -77,14 +78,12 @@ export default function Register() {
                 setEmail(e.target.value);
               }}
             />
-          </Form.Group>
+          {/* </Form.Group> */}
 
-          <Form.Group
-            className="mb-3"
-            controlId="formBasicPassword"
-          >
-            <Form.Label>Password</Form.Label>
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Label className={styles.label}>Password</Form.Label>
             <Form.Control
+              className={styles.control}
               type="password"
               name="password"
               id="password"
@@ -104,7 +103,8 @@ export default function Register() {
                 backgroundColor: "black",
                 border: "none",
                 borderRadius: "10px",
-                marginBottom: "12px",
+                marginBottom: "10px",
+                height:"35px" 
               }}
             >
               Submit

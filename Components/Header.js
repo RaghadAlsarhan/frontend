@@ -31,6 +31,11 @@ export default function Header() {
         </Nav.Link>
       </Nav.Item>
       <Nav.Item as="li">
+        <Nav.Link href="/Branches" className={styles.navLink} style={{color:"white"}}>
+          Branches
+        </Nav.Link>
+      </Nav.Item>
+      <Nav.Item as="li">
         <Nav.Link href="/LogIn" className={styles.navLink} style={{color:"white"}}>
           Signin
         </Nav.Link>

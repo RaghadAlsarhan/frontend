@@ -5,9 +5,9 @@ import styles from "../styles/Footer.module.css";
 export default function Footer() {
   return (
     <div className={styles.footer}>
-        <ul>
+        {/* <ul> */}
           <TiSocialFacebook /> <AiFillTwitterSquare /> <TiSocialInstagram />
-        </ul>
+        {/* </ul> */}
         <p id={styles.p}>copyright © 2021</p>
     </div>
   );
