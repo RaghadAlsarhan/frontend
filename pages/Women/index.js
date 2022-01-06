@@ -2,16 +2,19 @@ import React from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import styles from "../../styles/service.module.css";
 import Image from "next/image";
+import women from '../../public/Img/womenS.png'
 export default function ServiceWomen() {
   return (
     <div>
       <Container fluid="md">
         <Row>
-          <Image
-            src="/Img/bodycare.jpg"
+          <Image 
+          // styles={{marginLeft:'-2rem',marginRight: '-2rem'}}
+          className={styles.im}
+            src={women}
             alt="women"
-            width={1920}
-            height={819}
+            // width={1920}
+            // height={819}
           />
         </Row>
         <Row className={styles.row}>

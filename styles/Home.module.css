@@ -18,7 +18,7 @@
   height: 24rem;
 }
 .img{
-  opacity: .9;
+  /* opacity: .9; */
   height: 2rem;
 }
 .img :hover{

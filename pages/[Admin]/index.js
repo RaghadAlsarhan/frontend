@@ -11,7 +11,7 @@ export default function Admin({ data }) {
                 <tr>
                   <th>Name of Servies:</th>
                   <th>price of Servies :</th>
-                  <th>Username</th>
+                  {/* <th>Username</th> */}
                 </tr>
               </thead>
               {data.map((element, i) => (

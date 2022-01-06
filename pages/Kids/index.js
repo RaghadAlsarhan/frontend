@@ -2,13 +2,14 @@ import React from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import styles from "../../styles/service.module.css";
 import Image from "next/image";
+import kids from '../../public/Img/baby.png'
 export default function ServiceKids() {
   return (
     <div>
       <Container fluid="md">
         <Row>
           <Image
-            src="https://i.pinimg.com/originals/e0/a9/d2/e0a9d27b2b18486d4295ae5157b0a752.jpg"
+            src={kids}
             alt="Vercel Logo"
             width={1920}
             height={819}

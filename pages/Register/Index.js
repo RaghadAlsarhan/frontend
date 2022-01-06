@@ -24,7 +24,6 @@ export default function Register() {
       .then((res) => {
         console.log(res.data);
         if (!(email == "" && password == "")) {
-          // navigate("/LogIn");
           router.push("/LogIn");
         }
       })

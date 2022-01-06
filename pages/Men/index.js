@@ -2,16 +2,17 @@ import React from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import styles from "../../styles/service.module.css";
 import Image from "next/image";
+import manS from '../../public/Img/menS.png'
 export default function ServiceMen() {
   return (
     <div>
       <Container fluid="md">
         <Row>
           <Image
-            src="/Img/menbeard.jpg"
+            src={manS}
             alt="Vercel Logo"
-            width={1400}
-            height={500}
+            // width={1400}
+            // height={500}
           />
         </Row>
         <Row className={styles.row}>
