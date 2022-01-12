@@ -1,0 +1,24 @@
+.table {
+  text-align: center;
+
+  border: solid 3px black;
+  width: 100%;
+}
+
+.table td {
+    border-bottom: 3px solid #000;
+    border-left: black 2px solid;
+    text-align: center;
+    justify-items:center
+    
+  }
+ 
+.table th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+
+.table tr:nth-child(even) {
+  background-color: #dddddd;
+}

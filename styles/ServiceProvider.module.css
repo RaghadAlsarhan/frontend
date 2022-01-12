@@ -1,0 +1,16 @@
+.h1 {
+  text-align: center;
+}
+
+.card {
+  border-radius: 10px;
+  border: solid 2px black;
+  align-items: space-between;
+  height: 500px;
+  margin-top: 10px;
+}
+.col {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
